@@ -4,5 +4,6 @@
     <string name="app_name">Homework2</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="tagyourquery">Tag your query</string>
 
 </resources>
