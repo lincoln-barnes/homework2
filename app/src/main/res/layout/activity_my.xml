@@ -11,7 +11,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/searchTextView"
+        android:id="@+id/searchBox"
         android:hint="Enter UTA search query here"
         android:layout_row="0"
         android:layout_column="0"
@@ -28,7 +28,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/queryTextView"
+            android:id="@+id/tagBox"
             android:hint="Tag your query"
             android:layout_row="0"
             android:layout_column="0"
@@ -43,14 +43,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/saveButton"
-            android:src="@android:drawable/ic_menu_save" />
+            android:src="@android:drawable/ic_menu_save"
+            android:onClick="onSaveClick" />
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tagged Searches"
+        android:gravity="center"
+        android:id="@+id/textView"
+        android:layout_row="5"
+        android:layout_column="0" />
+
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/listView1"
-        android:layout_row="5"
-        android:layout_column="0"/>
+        android:layout_row="6"
+        android:layout_column="0"
+        android:divider="#FFCC00"
+        android:dividerHeight="4px"
+        android:background="#ff9c95ff" />
 </GridLayout>
