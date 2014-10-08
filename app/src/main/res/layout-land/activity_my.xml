@@ -48,11 +48,23 @@
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tagged Searches"
+        android:gravity="center"
+        android:id="@+id/textView"
+        android:layout_row="5"
+        android:layout_column="0" />
+
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/listView1"
-        android:layout_row="5"
+        android:layout_row="6"
         android:layout_column="0"
-        android:background="#ffffffff" />
+        android:divider="#FFCC00"
+        android:dividerHeight="4px"
+        android:background="#ff9c95ff" />
 </GridLayout>
