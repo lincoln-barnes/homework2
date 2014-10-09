@@ -81,7 +81,7 @@ public class MyActivity extends Activity
                             shareIntent.setType("text/plain");
                             startActivity(Intent.createChooser(shareIntent, "Share"));
                         }
-                        if(selected.equals("Edit"))
+                        else if(selected.equals("Edit"))
                         {
                             searchBox.setText(sharePreferences.getString(tag, ""));
                             tagBox.setText(tag);
@@ -90,12 +90,28 @@ public class MyActivity extends Activity
                             editor.remove(tag);
                             editor.apply();
                         }
-                        if(selected.equals("Delete"))
+                        else if(selected.equals("Delete"))
                         {
-                            tags.remove(tag);
-                            adapter.notifyDataSetChanged();
-                            editor.remove(tag);
-                            editor.apply();
+                            String msg2 = String.format("Are you sure you want to delete \"%s\"", tag);
+                            AlertDialog.Builder deleteBuilder = new AlertDialog.Builder(context);
+
+                            deleteBuilder.setTitle(msg2);
+                            deleteBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener(){
+                                public void onClick(DialogInterface dialog, int id) {
+                                    tags.remove(tag);
+                                    adapter.notifyDataSetChanged();
+                                    editor.remove(tag);
+                                    editor.apply();
+                                }
+                            });
+                            deleteBuilder.setNegativeButton("No", new DialogInterface.OnClickListener(){
+                                public void onClick(DialogInterface dialog, int id) {
+
+                            }
+                        });
+
+                            AlertDialog alertDialog = deleteBuilder.create();
+                            alertDialog.show();
                         }
                     }
                 });
